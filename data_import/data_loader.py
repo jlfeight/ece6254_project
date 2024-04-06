@@ -68,7 +68,6 @@ for nyear in range(1,len(data)):
     data_encoded = data_encoded.drop(categorical_columns, axis=1)
     data_encoded = data_encoded.drop(['FTR_A','FTR_D','FTR_H'], axis=1) #drop the FTR classifier
     clean_data = np.vstack((clean_data,data_encoded.to_numpy()))
-    print(data_encoded.shape, clean_data_df.shape)
     clean_data_df = pd.concat([clean_data_df, data_encoded], ignore_index=True, axis=0)
     
 
