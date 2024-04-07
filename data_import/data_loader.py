@@ -99,7 +99,7 @@ X_train, X_test, y_train, y_test = train_test_split(X_df, y, test_size=.2, rando
 
 
 
-#PCA dim reduction (to play with), this uses its own preprocessing not the scaled data
+###############PCA dim reduction (to play with), this uses its own preprocessing not the scaled data
 
 n_reducedfeatures = 2
 
@@ -122,7 +122,7 @@ for i in range(0,len(y_test)): #i am sure there is built in function or somethin
 graph = plt.scatter(x_PCA[:,0],x_PCA[:,1], c=y_test_num)
 plt.colorbar(graph)
 
-#logReg (to play with)
+##############logReg (to play with)
 logRegr = LogisticRegression()
 logRegr.fit(X_train,y_train)
 pred = logRegr.predict(X_test)
@@ -133,7 +133,7 @@ pred = logRegr.predict(X_test)
 fake_score = 0
 for i,predval in enumerate(pred):
     if predval!=y_test[i]:
-        fake_score = fake_score+1
+        fake_score = fake_score+1 #+1 for each wrong
 print(fake_score/len(pred))
 
 
